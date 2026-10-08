@@ -82,36 +82,36 @@ def sphere_volume_parallel(n, d, np=10):
     # np is the number of processes
     
 def main():
-    # Exc1
-    # dots = [1000, 10000, 100000]
-    # for n in dots:
-    #     approximate_pi(n)
+    #Exc1
+    dots = [1000, 10000, 100000]
+    for n in dots:
+        approximate_pi(n)
 
-    # # Exc2
-    # n = 100000
-    # d = 2
-    # print(sphere_volume(n, d))
-    # print(f"Actual volume of {d} dimentional sphere = {hypersphere_exact(n,d)}")
+    # Exc2
+    n = 100000
+    d = 2
+    print(sphere_volume(n, d))
+    print(f"Actual volume of {d} dimentional sphere = {hypersphere_exact(n,d)}")
 
-    # n = 100000
-    # d = 11
-    # print(sphere_volume(n, d))
-    # print(f"Actual volume of {d} dimentional sphere = {hypersphere_exact(n,d)}")
+    n = 100000
+    d = 11
+    print(sphere_volume(n, d))
+    print(f"Actual volume of {d} dimentional sphere = {hypersphere_exact(n,d)}")
 
-    # # Exc3
-    # n = 1000000
-    # d = 11
-    # for i in range(3):
-    #     start = pc()
-    #     sphere_volume(n, d)
-    #     stop = pc()
-    #     print(f"Exc3: call# {i+1}, Sequential time of {d} and {n}: {stop-start}")
-    # print("What is numba time?")
-    # for i in range(3):
-    #     start = pc()
-    #     sphere_volume_numba(n,d)
-    #     stop= pc()
-    #     print(f"Exc3: call# {i+1}, Numba Sequential time of {d} and {n}: {stop-start}")
+    # Exc3
+    n = 1000000
+    d = 11
+    for i in range(3):
+        start = pc()
+        sphere_volume(n, d)
+        stop = pc()
+        print(f"Exc3: call# {i+1}, Sequential time of {d} and {n}: {stop-start}")
+    print("What is numba time?")
+    for i in range(3):
+        start = pc()
+        sphere_volume_numba(n,d)
+        stop= pc()
+        print(f"Exc3: call# {i+1}, Numba Sequential time of {d} and {n}: {stop-start}")
 
     # Exc4
     n = 1000000
