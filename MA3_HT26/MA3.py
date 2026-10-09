@@ -23,14 +23,24 @@ def approximate_pi(n):
     # n is the number of points
     nc=0
     ns=0
+    nclst=[]
+    nslst=[]
     for i in range(n):
         xcor=random.uniform(-1,1)
         ycor=random.uniform(-1,1)
         dist=m.sqrt((xcor**2)+(ycor**2))
         if dist<=1:
             nc+=1
+            nclst.append((xcor,ycor))
         else:
             ns+=1
+            nslst.append((xcor,ycor))
+
+    xc, yc = zip(*nclst)
+    xs, ys = zip(*nslst)
+    plt.scatter(xc,yc, color="red")
+    plt.scatter(xs, ys, color="blue")
+    plt.savefig(f"approximate_pi_{n}.png")
     return 4*(nc/n) #add plotting thing?
         
 
